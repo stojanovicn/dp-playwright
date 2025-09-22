@@ -32,8 +32,4 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <ItemGroup>
-    <AdditionalFiles Include="../analyzers/BannedSymbols.txt" />
-  </ItemGroup>
-
 </Project>

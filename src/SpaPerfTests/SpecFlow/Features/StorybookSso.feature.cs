@@ -40,8 +40,8 @@ namespace SpaPerfTests.SpecFlow.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpecFlow/Features", "Storybook SSO Login", "  As a user\n  I want to login via SSO to Storybook docs\n  So that I can view the " +
-                    "Introduction page", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpecFlow/Features", "Storybook SSO Login", "  As a user\r\n  I want to login via SSO to Storybook docs\r\n  So that I can view th" +
+                    "e Introduction page", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
