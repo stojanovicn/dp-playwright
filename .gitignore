@@ -416,3 +416,15 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Playwright
+playwright-report/
+test-results/
+
+# Yarn
+yarn.lock
+
+# Node
+node_modules/
+
+src/.idea/
