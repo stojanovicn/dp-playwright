@@ -117,12 +117,6 @@ src/
 - **Traces**: `artifacts/perf/*.har` - Network requests
 - **Debug**: `artifacts/perf/*_trace.zip` - Playwright traces
 
-## Safety Rules
-
-- No `Process.Start`, no arbitrary `File/Directory` IO outside `artifacts/`, no `HttpClient` in tests
-- Banned via `analyzers/BannedSymbols.txt`
-- Prefer ARIA locators: `GetByRole` / `GetByLabel`
-- Deterministic waits only: locator assertions, `LoadState.DOMContentLoaded`
 
 ## Documentation
 

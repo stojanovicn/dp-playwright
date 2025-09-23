@@ -211,7 +211,6 @@ dotnet test
 
 ## Safety and Best Practices
 
-- **Forbidden APIs**: Banned by analyzers (`analyzers/BannedSymbols.txt`)
 - **File I/O**: Only allowed in `artifacts/` directory
 - **Locators**: Prefer `GetByRole`/`GetByLabel` over CSS selectors
 - **Waits**: Use Playwright waits instead of `Thread.Sleep`

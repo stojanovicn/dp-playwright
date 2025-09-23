@@ -24,7 +24,6 @@ Advanced Playwright test suite for .NET targeting Storybook applications with co
 - `src/`
   - `dp-playwright.sln`: solution
   - `Directory.Build.props`: strict build settings
-  - `analyzers/BannedSymbols.txt`: safety gates
   - `SpaPerfTests/`
     - `SpaPerfTests.csproj`: test project
     - `PlaywrightFixture.cs`: launches Chromium with precise memory + gc
@@ -62,13 +61,6 @@ timestamp,href,text,jsHeapUsedBytes,jsHeapTotalBytes,taskDurationMs,deltaHeapUse
 - **Rendering Speed**: 0.007-0.029ms (very fast)
 - **Memory Management**: Negative deltas indicate proper cleanup
 - **Heavy Components**: Icons page shows 7.8MB delta (expected for icon libraries)
-
-## Safety Rules
-
-- No `Process.Start`, no arbitrary `File/Directory` IO outside `artifacts/`, no `HttpClient` in tests
-- Banned via `analyzers/BannedSymbols.txt`
-- Prefer ARIA locators: `GetByRole` / `GetByLabel`
-- Deterministic waits only: locator assertions, `LoadState.DOMContentLoaded`
 
 ## Artifacts
 

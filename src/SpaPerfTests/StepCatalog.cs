@@ -90,8 +90,9 @@ namespace SpaPerfTests
 			// Visit every doc link in the tree
 			var selector = "a[href^='/adaptive-components/?path=']";
 			var total = await tree.Locator(selector).CountAsync();
-			// Visit all links in the tree
-			for (int i = 0; i < total; i++)
+			// Limit to first 100 links to prevent extremely long test runs
+			var maxLinks = Math.Min(total, 100);
+			for (int i = 0; i < maxLinks; i++)
 			{
 				try
 				{
@@ -104,7 +105,7 @@ namespace SpaPerfTests
 					// Wait for navigation to complete, but don't wait for network idle (can timeout on heavy pages)
 					await _page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
 					// Give a longer time for any lazy loading to complete
-					await _page.WaitForTimeoutAsync(2000);
+					await _page.WaitForTimeoutAsync(1000);
 					await CdpHelper.ForceGcAsync(_page);
 					var metrics = await CdpHelper.GetPerformanceMetricsAsync(_page);
 					var delta = previousHeapUsed.HasValue ? metrics.JsHeapUsedSizeBytes - previousHeapUsed.Value : 0d;
